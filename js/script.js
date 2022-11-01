@@ -7,6 +7,19 @@ const gameState = [
 ];
 gameBoard.addEventListener('click', (event) => {
     const target = event.target;
-    console.log(target);
+    
+
+    let x, y;
+
+
+    gameState.forEach((row, rowIndex) => {
+      row.forEach((column, columnIndex) => {
+        if (column === target) {
+          x = rowIndex;
+          y = columnIndex;
+        }
+      });
+    });
+    console.log(x, y);
 });
 
