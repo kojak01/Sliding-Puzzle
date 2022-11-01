@@ -9,10 +9,10 @@ gameBoard.addEventListener('click', (event) => {
     const target = event.target;
     
 
-    let x, y;
+    let x, y; 
 
 
-    gameState.forEach((row, rowIndex) => {
+    gameState.forEach((row, rowIndex) => { // check position click
       row.forEach((column, columnIndex) => {
         if (column === target) {
           x = rowIndex;
@@ -20,6 +20,17 @@ gameBoard.addEventListener('click', (event) => {
         }
       });
     });
-    console.log(x, y);
+    console.log(x, y); 
+    let emptyX, emptyY; 
+
+    gameState.forEach((row, rowIndex) => { // check position empty element 
+      row.forEach((column, columnIndex) => {
+        if (column.innerText === '') {
+          emptyX = rowIndex;
+          emptyY = columnIndex;
+        }
+      });
+    });
+    console.log(emptyX, emptyY);
 });
 
