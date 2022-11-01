@@ -65,7 +65,6 @@ gameBoard.addEventListener('click', (event) => {
       const temp = gameState[x][y];
       gameState[x][y] = gameState[emptyX][emptyY];
       gameState[emptyX][emptyY] = temp;
-      render(gameBoard, gameState);
     }
   });
 
