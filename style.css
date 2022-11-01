@@ -31,5 +31,10 @@ body {
   font-size: 30px;
   transition: top 0.2s linear, left 0.2s linear;
   background: url(/pumpkins.jpg);
+  color: transparent;
+}
 
+.tile:last-of-type {
+  background: none;
+  border: none;
 }
