@@ -38,9 +38,34 @@ gameBoard.addEventListener('click', (event) => {
         }
       });
     });
-    const temp = gameState[x][y];  // we replace the empty element with the clicked element
-    gameState[x][y] = gameState[emptyX][emptyY];
-    gameState[emptyX][emptyY] = temp;
-    render(gameBoard, gameState);
+
+    if (y === emptyY) { // <= after render
+      if (x + 1 === emptyX || x - 1 === emptyX) {
+        const temp = gameState[x][y];
+        gameState[x][y] = gameState[emptyX][emptyY];
+        gameState[emptyX][emptyY] = temp;
+        render(gameBoard, gameState);
+      } else {
+        const temp = gameState[x][y];
+        gameState[x][y] = gameState[emptyX][emptyY];
+        gameState[emptyX][emptyY] = temp;
+        render(gameBoard, gameState);
+      };
+    };
+
+    if(x === emptyX) {
+      if(y + 1 === emptyY || y - 1 === emptyY) {
+        const temp = gameState[x][y];
+        gameState[x][y] = gameState[emptyX][emptyY];
+        gameState[emptyX][emptyY] = temp;
+        render(gameBoard, gameState);
+      } else {
+        const temp = gameState[x][y];
+        gameState[x][y] = gameState[emptyX][emptyY];
+        gameState[emptyX][emptyY] = temp;
+        render(gameBoard, gameState);
+      };
+    };
+    
 });
 
